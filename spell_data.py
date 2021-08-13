@@ -4,6 +4,8 @@
 
 # Spell id to spell names, including rank
 SPELL_NAMES = {
+    "25235": "Flash Heal (Rank 9)",
+    "25233": "Flash Heal (Rank 8)",
     "10917": "Flash Heal (Rank 7)",
     "10916": "Flash Heal (Rank 6)",
     "10915": "Flash Heal (Rank 5)",
@@ -14,17 +16,24 @@ SPELL_NAMES = {
 
     "2053": "Lesser Heal (Rank 3)",
 
+    "32546": "Binding Heal (Rank 1)",
+
+    "25308": "Prayer of Healing (Rank 6)",
     "25316": "Prayer of Healing (Rank 5)",
     "10961": "Prayer of Healing (Rank 4)",
     "10960": "Prayer of Healing (Rank 3)",
     "996": "Prayer of Healing (Rank 2)",
     "596": "Prayer of Healing (Rank 1)",
 
+    "25213": "Greater Heal (Rank 7)",
+    "25210": "Greater Heal (Rank 6)",
     "25314": "Greater Heal (Rank 5)",
     "10965": "Greater Heal (Rank 4)",
     "10964": "Greater Heal (Rank 3)",
     "10963": "Greater Heal (Rank 2)",
     "2060": "Greater Heal (Rank 1)",
+
+    "33110": "Prayer of Mending (Rank 1)",
 
     "6064": "Heal (Rank 4)",
     "6063": "Heal (Rank 3)",
@@ -37,6 +46,7 @@ SPELL_NAMES = {
     "27804": "Holy Nova (Rank 5)",
     "23455": "Holy Nova (Rank 1)",
 
+    "25222": "Renew (Rank 12)",
     "10929": "Renew (Rank 9)",
     "6078": "Renew (Rank 6)",
     "6077": "Renew (Rank 5)",
@@ -44,13 +54,16 @@ SPELL_NAMES = {
     "139": "Renew (Rank 1)",
 
     "22009": "Greater Heal Renew",
+    "37563": "Renewal",
 
     "19243": "Desperate Prayer (Rank 7)",
 
+    "25218": "Power Word: Shield (Rank 12)",
     "10901": "Power Word: Shield (Rank 10)",
     "10899": "Power Word: Shiled (Rank 8)",
 
     # Other misc spells
+    "25429": "Fade (Rank 7)",
     "10942": "Fade (Rank 6)",
     "10890": "Psychic Scream (Rank 4)",
 
@@ -60,12 +73,12 @@ SPELL_NAMES = {
 
     # Utility spells
     # Priest
-    "27681": "Prayer of Spirit (Rank 1)",
-    "21564": "Prayer of Fortitude (Rank 2)",
+    "32999": "Prayer of Spirit (Rank 2)",
+    "25392": "Prayer of Fortitude (Rank 3)",
 
-    "27841": "Divine Spirit (Rank 4)",
+    "25312": "Divine Spirit (Rank 5)",
     "10958": "Shadow Protection (Rank 3)",
-    "10938": "Power Word: Fortitude (Rank 6)",
+    "25389": "Power Word: Fortitude (Rank 7)",
 
     "20770": "Resurrection (Rank 5)",
     "10881": "Resurrection (Rank 4)",
@@ -183,6 +196,8 @@ SPELL_BUFFS = [
 # Spell coefficients of each spell id, for determining weight of heal power
 SPELL_COEFFICIENTS = {
     # Flash Heal
+    "25235": 0.429,
+    "25233": 0.429,
     "10917": 0.429,
     "10916": 0.429,
     "10915": 0.429,
@@ -194,19 +209,28 @@ SPELL_COEFFICIENTS = {
     # Lesser Heal
     "2053": 0.446,
 
+    # Binding Heal
+    "32546": 0.429,
+
     # Prayer of Healing
-    "25316": 0.286,
-    "10961": 0.286,
-    "10960": 0.286,
-    "996": 0.286,
-    "596": 0.286,
+    "25308": 0.429,
+    "25316": 0.429,
+    "10961": 0.398,
+    "10960": 0.398,
+    "996": 0.337,
+    "596": 0.275,
 
     # Greater Heal
-    "25314": 0.857,
-    "10965": 0.857,
-    "10964": 0.857,
-    "10963": 0.857,
-    "2060": 0.857,
+    "25213": 0.857,
+    "25210": 0.857,
+    "25314": 0.833,
+    "10965": 0.796,
+    "10964": 0.771,
+    "10963": 0.698,
+    "2060": 0.624,
+
+    # Prayer of Mending
+    "33110": 0.429,
 
     # Heal
     "6064": 0.857,
@@ -222,6 +246,7 @@ SPELL_COEFFICIENTS = {
     "23455": 0.107,
 
     # Renew
+    "25222": 1.0 / 5,
     "10929": 1.0 / 5,
     "6078": 1.0 / 5,
     "6077": 1.0 / 5,
@@ -231,11 +256,14 @@ SPELL_COEFFICIENTS = {
     # Greater Heal Renew, 8t2
     "22009": 1.0 / 5,
 
+    # Renewal
+    "37563": 1.0 / 5,
+
     # Desperate Prayer
     "19243": 0.429,
 
     # Power Word: Shield
-    "10901": 0.1,
+    "25218": 0.3,
 
     # Dispel Magic
     "988": 0.0,
@@ -247,7 +275,9 @@ SPELL_COEFFICIENTS = {
 # Raw healing of each spell
 SPELL_HEALS = {
     # Flash Heal
-    "10917": 901.5,
+    "25235": 1205.5,
+    "25233": 1004.5,
+    "10917": 906,
     "10916": 722.5,
     "10915": 583.5,
     "9474": 453.0,
@@ -258,19 +288,27 @@ SPELL_HEALS = {
     # Lesser Heal
     "2053": 154.0,
 
+    # Binding Heal
+    "32546": 1201.5,
+
     # Prayer of Healing
     # "25316": 0.0,
-    "10961": 965.0,
+    "25308": 1286.5,
     # "10960": 0.0,
     # "996": 0.0,
     "596": (333 + 312) / 2,
 
     # Greater Heal
+    "25213": 2608.5,
+    "25210": 2275.5,
     "25314": 2080.0,
     "10965": 1917.0,
     "10964": 1556.0,
     "10963": 1248.0,
     "2060": 981.5,
+
+    # Prayer of Mending
+    "33110": 800.0,
 
     # Heal
     "6064": 780.5,
@@ -286,6 +324,7 @@ SPELL_HEALS = {
     "23455": 58.5,
 
     # Renew
+    "25222": 1110 / 5,
     "10929": 810 / 5,
     "6078": 400 / 5,
     "6077": 315 / 5,
@@ -294,6 +333,9 @@ SPELL_HEALS = {
 
     # Greater Heal Renew, 8t2
     "22009": 315 / 5,
+
+    # Renewal, 2t4
+    "37563": 150 / 3,
 
     # Desperate Prayer
     "19243": 1459.5,
@@ -304,6 +346,8 @@ SPELL_HEALS = {
 
 # Mana cost of each spell
 SPELL_MANA = {
+    "25235": 470.0,
+    "25233": 400.0,
     "10917": 380.0,
     "10916": 315.0,
     "10915": 265.0,
@@ -314,17 +358,24 @@ SPELL_MANA = {
 
     "2053": 75.0,
 
+    "32546": 705.0,
+
+    "25308": 1255.0,
     "25316": 1070.0,
     "10961": 1030.0,
     "10960": 770.0,
     "996": 560.0,
     "596": 410.0,
 
+    "25213": 701.0,
+    "25210": 638.0,
     "25314": 710.0,
     "10965": 655.0,
     "10964": 545.0,
     "10963": 445.0,
     "2060": 370.0,
+
+    "33110": 390.0,
 
     "6064": 305.0,
     "6063": 255.0,
@@ -339,6 +390,7 @@ SPELL_MANA = {
     # "23455": "Holy Nova (Rank 1)",
 
     # Renews
+    "25222": 405.0,
     "10929": 365.0,
     "6078": 205.0,
     "6077": 170.0,
@@ -390,7 +442,7 @@ def spell_name(spell_id, warn_on_not_found=True):
         return SPELL_NAMES[spell_id]
 
     if warn_on_not_found and spell_id not in warning_list["name"]:
-        print(f"Unknown name for spell {spell_id}, https://classic.wowhead.com/spell={spell_id}")
+        print(f"Unknown name for spell {spell_id}, https://tbc.wowhead.com/spell={spell_id}")
         warning_list["name"].append(spell_id)
 
     return f"[Spell {spell_id}]"
@@ -401,7 +453,7 @@ def spell_coefficient(spell_id, warn_on_not_found=True):
         return SPELL_COEFFICIENTS[spell_id]
 
     if warn_on_not_found and spell_id not in warning_list["coef"]:
-        print(f"Unknown coefficient for spell {spell_id}, https://classic.wowhead.com/spell={spell_id}")
+        print(f"Unknown coefficient for spell {spell_id}, https://tbc.wowhead.com/spell={spell_id}")
         warning_list["coef"].append(spell_id)
 
     return 0.0
@@ -412,7 +464,7 @@ def spell_heal(spell_id, warn_on_not_found=True):
         return SPELL_HEALS[spell_id]
 
     if warn_on_not_found and spell_id not in warning_list["heal"]:
-        print(f"Unknown base heal for spell {spell_id}, https://classic.wowhead.com/spell={spell_id}")
+        print(f"Unknown base heal for spell {spell_id}, https://tbc.wowhead.com/spell={spell_id}")
         warning_list["heal"].append(spell_id)
 
     return 0.0
@@ -424,7 +476,7 @@ def spell_mana(spell_id, talents=None, warn_on_not_found=True):
 
     if spell_id not in SPELL_MANA:
         if warn_on_not_found and spell_id not in warning_list["mana"]:
-            print(f"Unknown mana cost for spell {spell_id}, https://classic.wowhead.com/spell={spell_id}")
+            print(f"Unknown mana cost for spell {spell_id}, https://tbc.wowhead.com/spell={spell_id}")
             warning_list["mana"].append(spell_id)
 
         return 0.0
